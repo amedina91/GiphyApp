@@ -72,4 +72,7 @@ Los endpoints están documentados con Swagger.
 
 Para desplegar el proyecto, necesitarás agregar la variable `GIPHY_API_KEY` en `.env` para consumir la API key de Giphy. De igual manera en el .env.example esta la estructura correcta.
 
+Para los test se puedes ejecutar las features utilizando el comando `php artisan test`. Asegúrate de tener configurado un entorno de prueba adecuado y que todas las dependencias estén instaladas correctamente.
+
 El proyecto se puede levantar con Docker usando el Dockerfile incluido.
+

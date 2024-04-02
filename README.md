@@ -1,66 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Proyecto Laravel 10 con API de GIPHY
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto integra la API de GIPHY con Laravel 10. Se desarrolló una API REST con autenticación OAuth2.0 utilizando la biblioteca Passport.
 
-## About Laravel
+## Servicios de la API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. **Registro de usuario**: Permite a un nuevo usuario registrarse en la plataforma.
+2. **Login**: Autentica al usuario para operar con la API.
+3. **Buscar GIFS**: Busca gifs por una frase o término.
+4. **Buscar GIF por ID**: Obtiene información de un gif específico.
+5. **Guardar GIF favorito**: Almacena un gif favorito para un usuario.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Adicionales
+6- **Ver logs** Interaccion de los servicios
+7. **Usuarios** Ver los usuarios registrados 
+## Persistencia de la interacción
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Toda la interacción con los servicios se registra, incluyendo:
 
-## Learning Laravel
+- Usuario que realizó la petición
+- Servicio consultado
+- Cuerpo de la petición y respuesta
+- Código HTTP de la respuesta
+- IP de origen de la consulta
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Documentación
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Se incluyen diagramas de casos de uso, secuencia y datos o DER. También se ha creado una colección POSTMAN con la descripción de los servicios y un Dockerfile para levantar el proyecto.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Diagramas
 
-## Laravel Sponsors
+Los diagramas se encuentran en la carpeta `images`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Caso de Uso Giphy
+![Caso de Uso Giphy](images/caso_de_uso_giphy.png)
 
-### Premium Partners
+#### Diagrama de Secuencia - Registro
+![Diagrama de Secuencia - Registro](images/registro.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+#### Diagrama de Secuencia - Login
+![Diagrama de Secuencia - Login](images/login.png)
 
-## Contributing
+#### Diagrama de Secuencia - Buscar GIF
+![Diagrama de Secuencia - Buscar GIF](images/buscar_gif.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Diagrama de Secuencia - Buscar GIF por ID
+![Diagrama de Secuencia - Buscar GIF por ID](images/buscar_gif_ID.png)
 
-## Code of Conduct
+#### Diagrama de Secuencia - Guardar GIF Favorito
+![Diagrama de Secuencia - Guardar GIF Favorito](images/store_favorite.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Diagrama de Datos
+![Diagrama de Datos](images/datos.png)
 
-## Security Vulnerabilities
+### Colección de Postman
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Las colecciones de Postman se encuentran en la carpeta `postman`.
 
-## License
+Puedes descargar la colección de Postman desde los siguientes enlaces:
+Se integra la automatización para que el token resultante del login se
+almacene en el environment. 
+- [Api Giphy.postman_collection.json](postman/Api%20Giphy.postman_collection.json)
+- [Workspace Postman Globals](postman/workspace.postman_globals.json)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Endpoints
+
+Los endpoints están documentados con Swagger.
+
+![Swagger](images/swagger.png)
+
+## Despliegue
+
+Para desplegar el proyecto, necesitarás agregar la variable `GIPHY_API_KEY` en `.env` para consumir la API key de Giphy. De igual manera en el .env.example esta la estructura correcta.
+
+El proyecto se puede levantar con Docker usando el Dockerfile incluido.

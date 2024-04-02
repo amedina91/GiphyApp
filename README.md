@@ -50,7 +50,7 @@ Los diagramas se encuentran en la carpeta `images`.
 ![Diagrama de Secuencia - Guardar GIF Favorito](images/store_favorite.png)
 
 #### Diagrama de Datos
-![Diagrama de Datos](images/datos.png)
+![Diagrama de Datos](images/diagrama_de_datos.png)
 
 ### Colección de Postman
 
